@@ -1,0 +1,86 @@
+#categories {
+    background-color: rgb(240, 240, 240);
+    margin: 50px 80px;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+#categories > h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.grid--container {
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* First column takes 1 part, second column takes 2 parts */
+    grid-gap: 20px; /* Adjust the gap between grid items as needed */
+}
+  
+.grid--item {
+    color: rgb(50,50,50);
+    cursor: pointer;
+    height: 250px;
+    width: auto;
+    font-size: 24px;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.item1{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.item2 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.item3 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.item4{
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.item1::before,
+.item2::before,
+.item3::before,
+.item4::before
+{
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+.item1::before{
+    content: 'Casual';
+}
+
+.item2::before{
+    content: 'Party';
+}
+
+.item3::before{
+    content: 'Formal';
+}
+
+.item4::before{
+    content: 'Gym';
+}
+
+.store--container {
+    display: flex;
+}
+
+@media only screen and (max-width: 800px) {
+    .grid--container {
+        display: flex;
+        flex-direction: column;
+    }
+}
